@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+@mixin color-invertido {
+    background-color: rgb(141, 235, 235);
+    text-decoration: solid;
+}
+
 @media screen and (max-width: 800px) {
     .checkbtn {
         display: block;
@@ -47,6 +52,7 @@
         /* height: 100%; */
         height: 100%;
         text-align: center;
+        @include color-invertido;
     }
 
     #check:checked ~ ul {
@@ -158,6 +164,7 @@
 
     section {
         height: 100%;
+        @include color-invertido;
     }
 
     #check:checked ~ ul {
