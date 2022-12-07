@@ -11,10 +11,11 @@
     text-decoration: solid;
 }
 
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 950px) {
     .checkbtn {
         display: block;
-    }   
+    }
 
     ul {
         position: fixed;
@@ -75,6 +76,10 @@
         height: 100%;
     }
 
+    #main-container {
+        display:none;
+    }
+
     .footer .grupo-1 {
         width: 100%;
         grid-template-columns: repeat(1, 1fr);
@@ -124,7 +129,7 @@
 }
 
 @if $vista == celular {
-    
+
 @media screen and (max-width: 400px) {
     .checkbtn {
         display: block;

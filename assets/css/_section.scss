@@ -8,3 +8,40 @@ section {
     background-color: rgb(172, 180, 180);
 }
 
+#main-container {
+    margin: 0 auto;
+    width: 900px;
+}
+
+$max: 9;
+$alpha: 0;
+$circle-color: hsl(241, 57%, 45%);
+$circle-size: 20px;
+
+%circle {
+    display: inline-block;
+    margin: 5px;
+    border-radius: 50%;
+    &:hover {
+        background-color: invert($circle-color);
+    }
+}
+
+@for $i from 1 through $max {
+    #circle-#{$i} {
+        @extend %circle;
+        $alpha: $alpha + 0.1;
+        background-color: transparentize($circle-color, $alpha);
+
+        @if $i == round($max/2) {
+            $circle-size: $circle-size + 20px;
+        } @else if $i > $max/2 {
+            $circle-size: $circle-size - 20px;
+        } @else {
+            $circle-size: $circle-size + 20px;
+        }
+
+        width: $circle-size;
+        height: $circle-size;
+    }
+}
